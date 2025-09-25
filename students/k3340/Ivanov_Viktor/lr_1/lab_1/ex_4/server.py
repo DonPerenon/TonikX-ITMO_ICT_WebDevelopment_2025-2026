@@ -2,6 +2,7 @@ import socket
 import threading
 import json
 import time
+import unicodedata
 from datetime import datetime
 
 # параметры сервера
@@ -16,6 +17,22 @@ class ChatServer:
         self.clients = {}  # {client_socket: {'username': str, 'address': tuple}}
         self.clients_lock = threading.Lock()
         self.running = False
+    
+    def clean_unicode(self, text):
+        """Очистка текста от некорректных Unicode-символов"""
+        if not isinstance(text, str):
+            return text
+        
+        # Удаляем суррогатные символы
+        cleaned = ''.join(char for char in text if not (0xD800 <= ord(char) <= 0xDFFF))
+        
+        # Нормализуем Unicode
+        try:
+            cleaned = unicodedata.normalize('NFKC', cleaned)
+        except:
+            pass
+        
+        return cleaned
         
     def start(self):
         """Запуск чат-сервера"""
@@ -94,7 +111,7 @@ class ChatServer:
             
             try:
                 username_info = json.loads(username_data)
-                username = username_info.get('username', f'User_{client_address[1]}')
+                username = self.clean_unicode(username_info.get('username', f'User_{client_address[1]}'))
             except json.JSONDecodeError:
                 username = f'User_{client_address[1]}'
             
@@ -140,7 +157,7 @@ class ChatServer:
                         
                         if message_type == 'message':
                             # обычное сообщение
-                            message = message_data.get('message', '')
+                            message = self.clean_unicode(message_data.get('message', ''))
                             if message.strip():
                                 chat_message = {
                                     'type': 'message',
@@ -153,20 +170,20 @@ class ChatServer:
                         
                         elif message_type == 'private':
                             # приватное сообщение
-                            target_username = message_data.get('target_username', '')
-                            message = message_data.get('message', '')
+                            target_username = self.clean_unicode(message_data.get('target_username', ''))
+                            message = self.clean_unicode(message_data.get('message', ''))
                             if target_username and message.strip():
                                 self.send_private_message(username, target_username, message)
                         
                         elif message_type == 'session_request':
                             # запрос на приватную сессию
-                            target_username = message_data.get('target_username', '')
+                            target_username = self.clean_unicode(message_data.get('target_username', ''))
                             if target_username:
                                 self.request_private_session(username, target_username)
                         
                         elif message_type == 'session_response':
                             # ответ на запрос приватной сессии
-                            target_username = message_data.get('target_username', '')
+                            target_username = self.clean_unicode(message_data.get('target_username', ''))
                             accepted = message_data.get('accepted', False)
                             if target_username:
                                 self.handle_session_response(username, target_username, accepted)

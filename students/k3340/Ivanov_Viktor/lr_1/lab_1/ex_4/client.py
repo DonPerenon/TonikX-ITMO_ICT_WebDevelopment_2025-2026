@@ -2,6 +2,7 @@ import socket
 import threading
 import json
 import time
+import unicodedata
 from datetime import datetime
 
 # параметры сервера
@@ -24,6 +25,22 @@ class ChatClient:
         self.session_response_thread = None  # Поток для обработки ответов на сессии
         self.waiting_for_session_response = False  # Ожидаем ли ответ на сессию
         self.session_request_from = None  # От кого запрос на сессию
+    
+    def clean_unicode(self, text):
+        """Очистка текста от некорректных Unicode-символов"""
+        if not isinstance(text, str):
+            return text
+        
+        # Удаляем суррогатные символы
+        cleaned = ''.join(char for char in text if not (0xD800 <= ord(char) <= 0xDFFF))
+        
+        # Нормализуем Unicode
+        try:
+            cleaned = unicodedata.normalize('NFKC', cleaned)
+        except:
+            pass
+        
+        return cleaned
         
     def connect(self, username):
         """подключение к чат-серверу"""
@@ -193,9 +210,11 @@ class ChatClient:
             return False
         
         try:
+            # Очищаем сообщение от некорректных Unicode-символов
+            cleaned_message = self.clean_unicode(message)
             message_data = {
                 'type': 'message',
-                'message': message
+                'message': cleaned_message
             }
             self.client_socket.sendall(json.dumps(message_data, ensure_ascii=False).encode('utf-8'))
             return True
@@ -210,13 +229,16 @@ class ChatClient:
             return False
         
         try:
+            # Очищаем сообщение от некорректных Unicode-символов
+            cleaned_message = self.clean_unicode(message)
+            cleaned_username = self.clean_unicode(target_username)
             message_data = {
                 'type': 'private',
-                'target_username': target_username,
-                'message': message
+                'target_username': cleaned_username,
+                'message': cleaned_message
             }
             self.client_socket.sendall(json.dumps(message_data, ensure_ascii=False).encode('utf-8'))
-            print(f"\nПриватное сообщение отправлено пользователю {target_username}")
+            print(f"\nПриватное сообщение отправлено пользователю {cleaned_username}")
             return True
         except Exception as e:
             print(f"\nОшибка отправки приватного сообщения: {e}")
@@ -244,19 +266,22 @@ class ChatClient:
             print("Нет подключения к серверу")
             return False
         
-        if target_username == self.username:
+        # Очищаем имя пользователя
+        cleaned_username = self.clean_unicode(target_username)
+        
+        if cleaned_username == self.username:
             print("Нельзя создать сессию с самим собой")
             return False
         
         # отправляем запрос на сервер
         session_request = {
             'type': 'session_request',
-            'target_username': target_username
+            'target_username': cleaned_username
         }
         
         try:
             self.client_socket.sendall(json.dumps(session_request, ensure_ascii=False).encode('utf-8'))
-            print(f"\nЗапрос на приватную сессию с {target_username} отправлен")
+            print(f"\nЗапрос на приватную сессию с {cleaned_username} отправлен")
             print(f"Ожидание ответа...")
             return True
         except Exception as e:
@@ -356,7 +381,7 @@ def main():
                     if chat_client.connected:
                         response_data = {
                             'type': 'session_response',
-                            'target_username': chat_client.session_request_from,
+                            'target_username': chat_client.clean_unicode(chat_client.session_request_from),
                             'accepted': accepted
                         }
                         try:
