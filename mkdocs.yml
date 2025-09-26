@@ -121,14 +121,14 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - главная: docs/index.md
+  - главная: index.md
   - задания:
-    - "задание 1 - UDP клиент-сервер": docs/ex_1/index.md
-    - "задание 2 - TCP математический сервер": docs/ex_2/index.md
-    - "задание 3 - HTTP сервер": docs/ex_3/index.md
-    - "задание 4 - многопользовательский чат": docs/ex_4/index.md
-    - "задание 5 - система управления оценками": docs/ex_5/index.md
-  - о проекте: docs/about.md
+    - "задание 1 - UDP клиент-сервер": ex_1/index.md
+    - "задание 2 - TCP математический сервер": ex_2/index.md
+    - "задание 3 - HTTP сервер": ex_3/index.md
+    - "задание 4 - многопользовательский чат": ex_4/index.md
+    - "задание 5 - система управления оценками": ex_5/index.md
+  - о проекте: about.md
 
 # Extra
 extra:
