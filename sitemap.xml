@@ -2,30 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/</loc>
-         <lastmod>2025-09-26</lastmod>
+         <lastmod>2025-10-31</lastmod>
     </url>
     <url>
          <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/about/</loc>
-         <lastmod>2025-09-26</lastmod>
+         <lastmod>2025-10-31</lastmod>
     </url>
     <url>
-         <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/ex_1/</loc>
-         <lastmod>2025-09-26</lastmod>
+         <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/main_lab/</loc>
+         <lastmod>2025-10-31</lastmod>
     </url>
     <url>
-         <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/ex_2/</loc>
-         <lastmod>2025-09-26</lastmod>
+         <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/practicum/</loc>
+         <lastmod>2025-10-31</lastmod>
     </url>
     <url>
-         <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/ex_3/</loc>
-         <lastmod>2025-09-26</lastmod>
-    </url>
-    <url>
-         <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/ex_4/</loc>
-         <lastmod>2025-09-26</lastmod>
-    </url>
-    <url>
-         <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/ex_5/</loc>
-         <lastmod>2025-09-26</lastmod>
+         <loc>https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/practicum_3/</loc>
+         <lastmod>2025-10-31</lastmod>
     </url>
 </urlset>
