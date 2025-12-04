@@ -12,26 +12,28 @@
         <meta name="author" content="Виктор Иванов">
       
       
-        <link rel="canonical" href="https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/">
+        <link rel="canonical" href="https://DonPerenon.github.io/ITMO_ICT_WebDevelopment_2025-2026/ex_2/">
       
       
+        <link rel="prev" href="../ex_1/">
       
-        <link rel="next" href="ex_1/">
+      
+        <link rel="next" href="../ex_3/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Лабораторная работа по Web-программированию</title>
+        <title>задание 2 - TCP математический сервер - Лабораторная работа по Web-программированию</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#web-" class="md-skip">
+        <a href="#2-tcp" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Лабораторная работа по Web-программированию" class="md-header__button md-logo" aria-label="Лабораторная работа по Web-программированию" data-md-component="logo">
+    <a href=".." title="Лабораторная работа по Web-программированию" class="md-header__button md-logo" aria-label="Лабораторная работа по Web-программированию" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              главная
+              задание 2 - TCP математический сервер
             
           </span>
         </div>
@@ -232,11 +234,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -253,11 +253,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="ex_1/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ex_1/" class="md-tabs__link">
           
   
   
@@ -277,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="about/" class="md-tabs__link">
+      <a href="../about/" class="md-tabs__link">
         
   
   
@@ -320,7 +322,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Лабораторная работа по Web-программированию" class="md-nav__button md-logo" aria-label="Лабораторная работа по Web-программированию" data-md-component="logo">
+    <a href=".." title="Лабораторная работа по Web-программированию" class="md-nav__button md-logo" aria-label="Лабораторная работа по Web-программированию" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -347,6 +349,101 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    главная
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../ex_1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    задания
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            задания
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
     
   
   
@@ -364,7 +461,7 @@
   
   
   <span class="md-ellipsis">
-    главная
+    задание 2 - TCP математический сервер
     
   </span>
   
@@ -372,12 +469,12 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    главная
+    задание 2 - TCP математический сервер
     
   </span>
   
@@ -402,7 +499,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      обзор заданий
+      описание
     </span>
   </a>
   
@@ -411,7 +508,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      цели лабораторной работы
+      требования
     </span>
   </a>
   
@@ -420,7 +517,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      технологический стек
+      структура проекта
     </span>
   </a>
   
@@ -429,7 +526,7 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      структура проекта
+      доступные математические операции
     </span>
   </a>
   
@@ -438,7 +535,7 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      быстрый старт
+      запуск приложения
     </span>
   </a>
   
@@ -447,7 +544,34 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      документация
+      примеры использования
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      особенности реализации
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      остановка сервера
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      примечания
     </span>
   </a>
   
@@ -460,64 +584,79 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
   
   
   
   
-    
-    
-      
+    <li class="md-nav__item">
+      <a href="../ex_3/" class="md-nav__link">
         
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="ex_1/" class="md-nav__link">
-      
   
   
   <span class="md-ellipsis">
-    задания
+    задание 3 - HTTP сервер
     
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+      </a>
+    </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    задание 4 - многопользовательский чат
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    задание 5 - система управления оценками
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -530,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -561,7 +700,7 @@
 
 
   
-    <a href="https://github.com/DonPerenon/ITMO_ICT_WebDevelopment_2025-2026/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/DonPerenon/ITMO_ICT_WebDevelopment_2025-2026/edit/master/docs/ex_2/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -570,44 +709,75 @@
     
       
     
-    <a href="https://github.com/DonPerenon/ITMO_ICT_WebDevelopment_2025-2026/raw/master/docs/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/DonPerenon/ITMO_ICT_WebDevelopment_2025-2026/raw/master/docs/ex_2/index.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="web-">лабораторная работа по web-программированию<a class="headerlink" href="#web-" title="Permanent link">&para;</a></h1>
-<p>документация по выполненным заданиям лабораторной работы по веб-программированию.</p>
-<h2 id="_1">обзор заданий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>выполнено 5 заданий, каждое демонстрирует различные аспекты веб-программирования и работы с сетевыми протоколами.</p>
-<p><strong>задание 1: UDP клиент-сервер</strong>
-протокол UDP, Python socket, SOCK_DGRAM. простая передача сообщений между клиентом и сервером.</p>
-<p><strong>задание 2: TCP математический сервер</strong>
-протокол TCP, Python socket, JSON, threading. выполнение математических операций на сервере.</p>
-<p><strong>задание 3: HTTP сервер</strong>
-протокол HTTP/1.1, Python socket, HTML, CSS. веб-сервер с поддержкой статических файлов.</p>
-<p><strong>задание 4: многопользовательский чат</strong>
-протокол TCP + JSON, Python socket, threading. реальное время, приватные сообщения, многопоточность.</p>
-<p><strong>задание 5: система управления оценками</strong>
-протокол HTTP/1.1, Python socket, HTML, CSS, POST/GET. веб-приложение с формами и базой данных в памяти.</p>
-<h2 id="_2">цели лабораторной работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>изучение сетевых протоколов, работа с сокетами, HTTP протокол, многопоточность, веб-разработка.</p>
-<h2 id="_3">технологический стек<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Python 3.6+, UDP, TCP, HTTP/1.1, socket, threading, json, datetime, urllib.parse, HTML5, CSS3, JavaScript, JSON, URL-encoded.</p>
-<h2 id="_4">структура проекта<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>lab_1/
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── ex_1/          # UDP клиент-сервер
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── ex_2/          # TCP математический сервер  
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── ex_3/          # HTTP сервер
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── ex_4/          # многопользовательский чат
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── ex_5/          # система управления оценками
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>└── docs/          # документация MkDocs
-</span></code></pre></div>
-<h2 id="_5">быстрый старт<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>для запуска любого из заданий перейдите в соответствующую папку, запустите сервер командой <code>python3 server.py</code>, в новом терминале запустите клиент командой <code>python3 client.py</code> (если применимо), откройте браузер для веб-заданий (ex_3, ex_5).</p>
-<h2 id="_6">документация<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>каждое задание содержит подробную документацию с описанием функциональности, инструкциями по запуску, примерами использования, техническими деталями реализации.</p>
+<h1 id="2-tcp">задание 2: математический TCP сервер<a class="headerlink" href="#2-tcp" title="Permanent link">&para;</a></h1>
+<h2 id="_1">описание<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>реализация клиент-серверного приложения для выполнения математических операций с использованием протокола TCP и библиотеки socket в Python.</p>
+<h2 id="_2">требования<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Python 3.6+, библиотека socket (встроенная в Python), библиотека math (встроенная в Python), библиотека json (встроенная в Python).</p>
+<h2 id="_3">структура проекта<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>server.py</code> - TCP сервер для выполнения математических операций, <code>client.py</code> - TCP клиент с интерактивным вводом параметров, <code>README.md</code> - инструкции по запуску.</p>
+<h2 id="_4">доступные математические операции<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><strong>1. теорема Пифагора</strong>
+формула: c = √(a² + b²), параметры: 2 катета (a, b), результат: длина гипотенузы &copy;.</p>
+<p><strong>2. решение квадратного уравнения</strong>
+формула: ax² + bx + c = 0, параметры: коэффициенты (a, b, c), результат: корни уравнения (x₁, x₂).</p>
+<p><strong>3. площадь трапеции</strong>
+формула: S = (a + b) × h ÷ 2, параметры: основания (a, b) и высота (h), результат: площадь трапеции.</p>
+<p><strong>4. площадь параллелограмма</strong>
+формула: S = a × h, параметры: сторона (a) и высота (h), результат: площадь параллелограмма.</p>
+<h2 id="_5">запуск приложения<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><strong>запуск сервера</strong>
+откройте первый терминал и выполните:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>ex_2
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>server.py
+</span></code></pre></div></p>
+<p>сервер запустится на localhost:8081 и будет ожидать подключений клиентов.</p>
+<p><strong>запуск клиента</strong>
+откройте второй терминал и выполните:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>ex_2
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python3<span class="w"> </span>client.py
+</span></code></pre></div></p>
+<p>клиент предложит выбрать математическую операцию и ввести необходимые параметры.</p>
+<h2 id="_6">примеры использования<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><strong>теорема Пифагора</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Выберите операцию (0-4): 1
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Катет a: 3
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Катет b: 4
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Результат: Гипотенуза c = 5.0000
+</span></code></pre></div></p>
+<p><strong>квадратное уравнение</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Выберите операцию (0-4): 2
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Коэффициент a: 1
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Коэффициент b: -5
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Коэффициент c: 6
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Результат: x₁ = 3.0000, x₂ = 2.0000
+</span></code></pre></div></p>
+<p><strong>площадь трапеции</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Выберите операцию (0-4): 3
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Основание a: 5
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Основание b: 7
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Высота h: 4
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Результат: Площадь трапеции S = 24.0000
+</span></code></pre></div></p>
+<p><strong>площадь параллелограмма</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Выберите операцию (0-4): 4
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Сторона a: 6
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Высота h: 8
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Результат: Площадь параллелограмма S = 48.0000
+</span></code></pre></div></p>
+<h2 id="_7">особенности реализации<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>использование протокола TCP (SOCK_STREAM), JSON формат для обмена данными между клиентом и сервером, интерактивный ввод параметров с клавиатуры, обработка ошибок и валидация входных данных, возможность выполнения множественных операций в одной сессии, корректное закрытие TCP соединений.</p>
+<h2 id="_8">остановка сервера<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>для остановки сервера нажмите Ctrl+C в терминале, где запущен сервер.</p>
+<h2 id="_9">примечания<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>сервер работает на порту 8081 (отличается от первого задания), клиент автоматически подключается к серверу при каждой операции, все вычисления выполняются на стороне сервера, результаты округляются до 4 знаков после запятой.</p>
 
 
 
@@ -644,15 +814,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../ex_1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: задание 1 - UDP клиент-сервер">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                задание 1 - UDP клиент-сервер
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="ex_1/" class="md-footer__link md-footer__link--next" aria-label="Next: задание 1 - UDP клиент-сервер">
+          <a href="../ex_3/" class="md-footer__link md-footer__link--next" aria-label="Next: задание 3 - HTTP сервер">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                задание 1 - UDP клиент-сервер
+                задание 3 - HTTP сервер
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -722,10 +908,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.suggest", "navigation.instant.types", "navigation.path", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.suggest", "navigation.instant.types", "navigation.path", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
