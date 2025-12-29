@@ -250,25 +250,6 @@
   
 
       
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="screenshots/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Скриншоты
-
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -430,7 +411,16 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Куда вставить скриншоты
+      Как устроено взаимодействие с бэкендом
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что проверить (чек‑лист)
     </span>
   </a>
   
@@ -479,28 +469,6 @@
   
   <span class="md-ellipsis">
     Интерфейсы
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="screenshots/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Скриншоты
     
   </span>
   
@@ -608,7 +576,16 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      Куда вставить скриншоты
+      Как устроено взаимодействие с бэкендом
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что проверить (чек‑лист)
     </span>
   </a>
   
@@ -676,12 +653,26 @@
 <li><strong>Фронтенд (ЛР4)</strong>: <code>npm run dev -- --host --port 5173</code> (в <code>lr_4/frontend</code>).</li>
 <li>Открыть UI: <code>http://127.0.0.1:5173/</code>.</li>
 </ul>
-<h2 id="_6">Куда вставить скриншоты<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Пример вставки (после того как положишь файл в <code>docs/assets/images/</code>):</p>
-<div class="codehilite"><pre><span></span><code>![<span class="nt">Дашборд</span>](<span class="na">assets/images/lr4-dashboard.png</span>)
-</code></pre></div>
-
-<p>Подробная инструкция: см. раздел «Скриншоты».</p>
+<h2 id="_6">Как устроено взаимодействие с бэкендом<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Фронтенд обращается к бэкенду ЛР3 по HTTP через <code>axios</code>.</li>
+<li>Базовый адрес API задан в <code>frontend/src/services/api.js</code>: <code>http://127.0.0.1:8002</code>.</li>
+<li>Все запросы выполняются в страницах <code>frontend/src/views/*.vue</code> (CRUD) и в <code>frontend/src/stores/auth.js</code> (авторизация).</li>
+<li>Авторизация — токенная (Djoser TokenAuth). После входа токен кладётся в <code>localStorage</code> и автоматически подставляется в заголовок:</li>
+<li><code>Authorization: Token &lt;token&gt;</code></li>
+</ul>
+<h2 id="_7">Что проверить (чек‑лист)<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Запустить бэкенд на <code>8002</code>.</li>
+<li>Запустить фронтенд на <code>5173</code>.</li>
+<li>Зайти в интерфейс и выполнить:</li>
+<li>регистрация / вход / выход;</li>
+<li>просмотр профиля;</li>
+<li>создание/редактирование/удаление предмета, кабинета, учителя;</li>
+<li>добавление ученика в класс;</li>
+<li>добавление урока в расписание;</li>
+<li>выставление оценки.</li>
+</ol>
 
 
 
